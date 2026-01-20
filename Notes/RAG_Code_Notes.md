@@ -1,5 +1,4 @@
-
-# RAG Codebase - Notes
+# RAG Codebase – Notes
 
 ## Purpose
 Build a **Retrieval-Augmented Generation (RAG)** pipeline that answers user questions using **external documents** by:
@@ -31,6 +30,14 @@ db/chroma_db/
 11_reciprocal_rank_fusion.py
 ```
 
+Main libraries used in the core scripts:
+
+- langchain (core), langchain-community, langchain-core
+- langchain-openai
+- langchain-chroma / chromadb
+- langchain-text-splitters (plus langchain-experimental for semantic chunking)
+- python-dotenv
+- pydantic (structured output in multi-query/RRF demos)
 ## Ingestion Pipeline
 - Loads `.txt` files
 - Chunks text
