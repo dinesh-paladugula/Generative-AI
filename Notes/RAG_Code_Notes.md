@@ -1,5 +1,5 @@
 
-# RAG Codebase – Storytelling Notes
+# RAG Codebase - Notes
 
 ## Purpose
 Build a **Retrieval-Augmented Generation (RAG)** pipeline that answers user questions using **external documents** by:
