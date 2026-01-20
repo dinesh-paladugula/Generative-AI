@@ -38,6 +38,7 @@ Main libraries used in the core scripts:
 - langchain-text-splitters (plus langchain-experimental for semantic chunking)
 - python-dotenv
 - pydantic (structured output in multi-query/RRF demos)
+
 ## Ingestion Pipeline
 - Loads `.txt` files
 - Chunks text
