@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import os
 from pathlib import Path
 from typing import List
@@ -19,8 +17,9 @@ CHROMA_COLLECTION = os.environ.get("CHROMA_COLLECTION", "docs")
 CHROMA_DIR.mkdir(parents=True, exist_ok=True)
 
 # Chunking 
-CHUNK_SIZE = 1000
-CHUNK_OVERLAP = 200
+CHUNK_SIZE = 400
+CHUNK_OVERLAP =60
+
 
 # Local embeddings 
 EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
@@ -96,7 +95,11 @@ def main():
     for i in range(0, len(docs), EMB_BATCH):
         embeddings.extend(embed_texts(docs[i : i + EMB_BATCH]))
 
-    
+    print("Total embeddings:", len(embeddings))
+    print("Embedding dimension:", len(embeddings[0]))
+    # Print first embedding (first 10 values only)
+    print("First embedding (first 10 values):", embeddings[0][:10])
+
     collection.upsert(ids=ids, documents=docs, metadatas=metas, embeddings=embeddings)
 
     print(
